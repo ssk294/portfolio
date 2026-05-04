@@ -1,0 +1,128 @@
+body{
+    background-color:  #1f1f1f;/*背景を黒に！*/
+    color: #f0f0f0;/*文字を白に*/
+    font-family: sans-serif;/*フォント変更*/
+    line-height: 1.8;/*行間*/
+    padding: 50px;/*画面端の余白*/
+}
+h1,h2{
+    color:#ffcc00;
+}
+hr{
+    border:0.5px solid #444;
+}    
+a{ color:#00ffff;text-decoration:none;}
+a:hover{ text-decoration:underline;}
+.skill-list{
+    display: flex;
+    flex-wrap: wrap;/*画面が狭くなったら折り返す*/
+    gap: 20px;/*アイコン同士の隙間*/
+    list-style: none;
+    padding: 0;
+}
+.skill-item{
+    text-align: center;
+    width: 100px;
+}
+/*アイコン設定*/
+.skill-icon{
+    width: 70px;
+    height: 70px;
+    border: 1.5px solid rgba(255,255,255,0.1);/*普段はうっすら*/
+    border-radius:15px;
+    padding: 10px;
+    transition: all 0.4s ease;/*ふわっと変化*/
+    background-color: rgba(255,255,255,0.05);
+    object-fit: contain;
+}
+/*ネオン点灯効果*/
+.skill-icon:hover{
+    cursor: pointer;
+    border-color:#00f2ff;/*ネオンブルーに点灯*/
+    background-color:rgba(0,242,255,0.1);
+    /*外側に光を漏らす*/
+    box-shadow: 0 0 15px rgba(0,242,255,0.6);
+    transform: translateY(-5px);/*ちょっと浮く*/
+}
+/*ソフト名のテキスト*/
+.skill-name{
+    display: block;
+    font-size: 12px;
+    margin-top: 8px;
+    color: #ccc;
+}
+/* ひよこ本体（chara-body）にオーラを出すルール */
+#chara-body.aura {
+    /* 赤い影を重ねて、メラメラ感を出す */
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8))
+            drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
+    
+    /* ついでにちょっとだけ震えさせるアニメーション */
+    animation: tremble 0.1s infinite;
+}
+
+/* 震える動きの定義 */
+@keyframes tremble {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(1px, 1px); }
+    50% { transform: translate(1px, 1px); }
+    75% { transform: translate(1px, -1px); }
+    100% { transform: translate(0px, 0px); }
+}
+/* --- ひよこの居場所を作る --- */
+
+#chara-body{
+    position: fixed;   /* 画面に固定する魔法 */
+    bottom: 15px;      /* 下から20px */
+    right: 15px;       /* 右から20px */
+    cursor: pointer;
+    text-align: center;
+    z-index: 1000;     /* 他のものより手前に出す */
+    display: inline-block; /* 震えるために必要！ */
+    font-size: 50px;       /* ひよこの大きさ */
+}
+
+#balloon {
+    position: fixed;
+    bottom: 85px;
+    right: 20px;
+    pointer-events: none;
+    background: #333;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    min-width: 120px;
+}
+
+.menu-btn{
+    position: fixed;
+    width:40px;
+    height:40px;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
+.menu-btn span{
+    display: block;
+    width: 30px;
+    height:2px;
+    background-color: #ffcc00;
+    margin-bottom: 6px;
+}
+
+.nav-menu{
+    position: fixed;
+    top: 0;right:-100%;
+    width:70%;height:100vh;
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 90;
+}
+.nav-menu.active {
+     right: 0; 
+}

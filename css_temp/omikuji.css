@@ -1,0 +1,13 @@
+body{
+    background-color:  #1f1f1f;/*背景を黒に！*/
+    color: #f0f0f0;/*文字を白に*/
+    font-family: sans-serif;/*フォント変更*/
+    line-height: 1.8;/*行間*/
+    padding: 50px;/*画面端の余白*/
+}
+
+h1{
+    text-align: center;
+    font-size: 100px;
+    margin-top: 300px;
+}
