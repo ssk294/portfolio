@@ -1,13 +1,68 @@
 body{
-    background-color:  #1f1f1f;/*背景を黒に！*/
-    color: #f0f0f0;/*文字を白に*/
+    background-color:  #fffaf0;/*背景を黒に！*/
+    background-image: radial-gradient(#e0d6c8 0.5px, transparent 0.5px);
+    background-size: 10px 10px;
+    color: #5d4037;/*文字を白に*/
     font-family: sans-serif;/*フォント変更*/
     line-height: 1.8;/*行間*/
-    padding: 50px;/*画面端の余白*/
+}
+#chara-body{
+    cursor: pointer;
+    font-size: 200px;       /* ひよこの大きさ */
+}
+#balloon {
+   position: absolute; /* 親（chara-container）を基準に動く */
+    bottom: 100%;       /* ひよこの頭の上に出したいから100%（真上） */
+    left: 50%;          /* 親の真ん中に合わせる */
+    transform: translateX(-50%); /* 自分の幅の半分だけ戻して、ピッタリ真ん中に */
+    background: #ffffff;
+    padding: 10px;
+    border : 2px solid;
+    border-radius: 15px;
+    white-space: nowrap; /* 文字が勝手に改行されないように */
+}
+.main-layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 300px;
+}
+#chara-container{
+    position: relative;
+    display: inline-block;
+}
+.uranai-button{
+    font-size: 50px;
+    font-family: 'Yuji Syuku', serif;
+    font-weight: bold;
+    cursor: pointer;
+    border: 6px double #ffffff;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #d32f2f;
+}
+#result-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* 最初は中心で小さくなってる */
+    width: 300px;
+    height: 600px;
+    background: #fff;
+    border: 5px double #d32f2f; /* ボタンとお揃いの二重線 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-family: 'Yuji Syuku', serif; /* 和風フォント */
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: all 0.5s ease-out; /* 変化をなめらかに */
+    z-index: 2000;
 }
 
-h1{
-    text-align: center;
-    font-size: 100px;
-    margin-top: 300px;
+/* 「show」というクラスがついた時に飛び出す！ */
+#result-card.show {
+    transform: translate(-50%, -50%) scale(1) rotate(360deg); /* 回りながら大きくなる */
+    opacity: 1;
 }
