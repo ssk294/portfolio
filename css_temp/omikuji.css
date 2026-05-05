@@ -168,9 +168,9 @@ body{
     position: fixed;
     top: 0;right:-100%;
     width:70%;height:100vh;
-    background-color: rgba(255, 220, 231, 0.8);
+    background-color: rgba(241, 230, 177, 0.8);
     padding-top: 60px;
-    box-shadow: -2px 0 5px rgba(233, 0, 175, 0.3);
+    box-shadow: -2px 0 5px rgba(119, 101, 0, 0.3);
     transition: 0.3s;
     z-index: 90;
 }
