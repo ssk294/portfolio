@@ -177,3 +177,39 @@ body{
 .nav-menu.active {
      right: 0; 
 }
+/* --- ここからスマホ用の修正 --- */
+@media (max-width: 768px) {
+    /* 1. 横並びをやめて、隙間を小さくする */
+    .main-layout {
+        flex-direction: column; /* 縦並びに変更 */
+        gap: 30px;              /* 隙間を300pxから30pxに！ */
+        padding-top: 60px;
+    }
+
+    /* 2. ひよこをスマホサイズにする */
+    #chara-body {
+        font-size: 120px;
+    }
+
+    /* 3. 占うボタンも少し小さくして収まりを良くする */
+    .uranai-button {
+        font-size: 32px;
+    }
+
+    /* 4. お札（結果カード）を画面に収める */
+    #result-card {
+        width: 90%;       /* 画面幅いっぱいにしない（少し余裕を持たせる） */
+        height: auto;     /* 高さを自動調整に */
+        max-height: 85vh; /* 画面の高さの85%までに制限 */
+        overflow-y: auto; /* はみ出たらスクロールできるようにする */
+        padding: 15px;
+        font-size: 16px;  /* 文字も少し小さく */
+    }
+
+    /* 吹き出しもスマホで見やすく調整 */
+    #balloon {
+        width: 180px;
+        white-space: normal; /* 折り返しを許可 */
+        font-size: 14px;
+    }
+}
