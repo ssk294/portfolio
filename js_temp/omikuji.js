@@ -107,12 +107,16 @@ window.addEventListener('DOMContentLoaded', () => {
         omikujiBtn.addEventListener('click', function() {
             const selected = getOmikuji();
 
-            // 結果の書き換え
+           // 結果の書き換え
             const luckElement = document.getElementById('luck-text');
             luckElement.innerText = selected.luck;
             document.getElementById('negai-text').innerText = selected.negai;
-            // ... 他の（renai, gakumonなど）もここに書く ...
-
+            document.getElementById('renai-text').innerText = selected.renai;
+            document.getElementById('gakumon-text').innerText = selected.gakumon;
+            document.getElementById('kenkou-text').innerText = selected.kenkou;
+            document.getElementById('shigoto-text').innerText = selected.shigoto;
+            document.getElementById('machibito-text').innerText = selected.machibito;
+            document.getElementById('usemono-text').innerText = selected.usemono;
             // オーラの演出
             const luckContainer = luckElement.closest('.luck-rank');
             luckContainer.classList.remove('aura-gold', 'aura-black');
