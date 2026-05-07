@@ -13,27 +13,28 @@ hr{
 }    
 a{ color:#00ffff;text-decoration:none;}
 a:hover{ text-decoration:underline;}
+
 .skill-list{
-    display: flex;
+    display: flex;/*自由に配置したいからflexで宣言*/
     flex-wrap: wrap;/*画面が狭くなったら折り返す*/
-    gap: 20px;/*アイコン同士の隙間*/
-    list-style: none;
-    padding: 0;
+    gap: 20px;/*アイコン同士の中の隙間*/
+    list-style: none;/*邪魔なを消したいたい*/
+    padding: 0;/*黒点を消したときに残る左側の隙間を消して端っこに合わせたいから*/
 }
 .skill-item{
-    text-align: center;
-    width: 100px;
+    text-align: center;/*画像の中心にテキストを置きたいから*/
+    width: 100px;/*内部的な？アイコンのサイズ*/
 }
 /*アイコン設定*/
 .skill-icon{
     width: 70px;
     height: 70px;
-    border: 1.5px solid rgba(255,255,255,0.1);/*普段はうっすら*/
+    border: 1.5px solid rgba(255,255,255,0.1);/*外枠をうっすら*/
     border-radius:15px;
     padding: 10px;
     transition: all 0.4s ease;/*ふわっと変化*/
     background-color: rgba(255,255,255,0.05);
-    object-fit: contain;
+    object-fit: contain;/*画像の比率を守るためにいれる*/
 }
 /*ネオン点灯効果*/
 .skill-icon:hover{
