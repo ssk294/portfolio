@@ -1,13 +1,29 @@
 body{
-    background-color:  #1f1f1f;/*背景を黒に！*/
-    color: #f0f0f0;/*文字を白に*/
+    background-color:  #909cad;
+    color: #ffefef;/*文字を白に*/
     font-family: sans-serif;/*フォント変更*/
     line-height: 1.8;/*行間*/
     padding: 50px;/*画面端の余白*/
 }
-h1,h2{
-    color:#ffcc00;
+
+.profile-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    width: 90%;
+    background-color: #97afffe0;
+    border: 2px solid #91b4ff;
+    border-radius: 30px;
+    padding: 40px;
+    margin: 20px auto;
 }
+
+h1,h2{
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 hr{
     border:0.5px solid #444;
 }    
