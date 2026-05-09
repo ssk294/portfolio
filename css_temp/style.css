@@ -197,3 +197,27 @@ a:hover{ text-decoration:underline;}
     max-width: 100%;
     height: auto;/*比率を崩さないように*/
 }
+
+@media screen and (max-width: 768px) {
+    .profile-card {
+        display: flex;  
+        
+        /* ★解決策の主役！ */
+        flex-direction: column-reverse; /* 縦並びにして、さらにHTMLの順番を「逆（下が上、上が下）」にする！ */
+        
+        justify-content: center; /* 縦並びの時は、上下の中央に揃える */
+        text-align: center;      /* 文字も真ん中揃えにすると、スマホではオシャレに見えるよ */
+        
+        padding: 40px 20px;      /* スマホ用に、左右の余白（padding）を少し狭く調整 */
+    }
+
+    .profile-card > div {
+        z-index: 2; /* 縦に並んでも、文字が泡より手前に来る設定はキープ */
+    }
+
+    /* アイコンのサイズもスマホ用に少し小さく調整 */
+    .profile-icon {
+        width: 140px; 
+        margin-bottom: 20px; /* アイコンと文字の間に少し隙間を作る */
+    }
+}
