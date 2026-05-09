@@ -57,3 +57,36 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+function createBubble() {
+    const container = document.getElementById('bubble-container');
+    if (!container) return; // コンテナがない場合は何もしない
+
+    const bubble = document.createElement('div');
+    bubble.classList.add('bubble');
+
+    // 1. 泡のサイズをランダムにする（10px〜30px）
+    const size = Math.random() * 20 + 10 + "px";
+    bubble.style.width = size;
+    bubble.style.height = size;
+
+    // 2. 出現する横位置をランダムにする（0%〜100%）
+    bubble.style.left = Math.random() * 100 + "%";
+
+    // 3. アニメーションの速度をランダムにする（4秒〜9秒）
+    const duration = Math.random() * 5 + 4;
+    bubble.style.animationDuration = duration + 's';
+
+    // 4. 泡の透明度も少しランダムにしてリアルにする
+    bubble.style.opacity = Math.random() * 0.5 + 0.2;
+
+    container.appendChild(bubble);
+
+    // 5. 昇りきったら要素を消す
+    setTimeout(() => {
+        bubble.remove();
+    }, duration * 1000);
+}
+
+// 6. 500ミリ秒（0.5秒）ごとに新しい泡を1つ生成
+setInterval(createBubble, 250);

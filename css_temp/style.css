@@ -11,12 +11,60 @@ body{
     justify-content: space-around;
     align-items: center; 
     width: 90%;
-    background-color: #97afffe0;
-    border: 2px solid #91b4ff;
+    background-color: #035f8a;
     border-radius: 30px;
     padding: 40px;
     margin: 20px auto;
+    position: relative; /* 泡をカードの中に固定するために必須！ */
+    overflow: hidden;    /* 泡がカードの外に漏れ出さないようにガード！ */
+    z-index: 0;          /* 重なりの土台にする */
 }
+
+/* 文字や画像が泡に埋もれないようにする */
+.profile-card > div {
+    position: relative;
+    z-index: 2; /* 泡(z-index: 1)よりも手前に表示する */
+}
+
+/* 泡の部屋の設定 */
+#bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 泡を触れないようにして、文字選択を邪魔させない */
+    z-index: 1;           /* 背景と文字の間に泡を置く */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px; /* カードの下の外側からスタート */
+    background-color: rgba(255, 255, 255, 0.4); /* 白くて透き通った色 */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* 輪郭を少しハッキリさせる */
+    border-radius: 50%; /* 丸くする */
+    pointer-events: none;
+    animation: rise linear forwards; /* 上にのぼるアニメーション */
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        /* 上に500px移動しながら、少し大きくして消えていく */
+        transform: translateY(-600px) scale(1.3);
+        opacity: 0;
+    }
+}
+
 
 h1,h2{
   font-family: "IBM Plex Sans JP", sans-serif;
@@ -27,6 +75,7 @@ h1,h2{
 hr{
     border:0.5px solid #444;
 }    
+
 a{ color:#00ffff;text-decoration:none;}
 a:hover{ text-decoration:underline;}
 
@@ -142,4 +191,10 @@ a:hover{ text-decoration:underline;}
 }
 .nav-menu.active {
      right: 0; 
+}
+
+.profile-icon{
+    width: 250px;
+    max-width: 100%;
+    height: auto;/*比率を崩さないように*/
 }
