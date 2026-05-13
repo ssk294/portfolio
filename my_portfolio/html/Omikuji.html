@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>おみくじコーナー！</title>
+    <meta name="viewport"content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css_temp/omikuji.css">
+    <link href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    
+    <nav>
+        <a href="../index.html">← トップページに戻る</a>
+    </nav>
+
+<div class="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<nav class="nav-menu"><!--大きくグループ化する-->
+    <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./blog.html">Blog</a></li>
+    </ul>
+</nav>
+
+<div class="main-layout">
+
+    <div id="omikuji-container">
+    <button id="omikuji-btn" class="uranai-button">占う</button>
+    </div>
+
+    <div id="chara-container">
+     <div id="balloon">ここではおみくじができるよ！ボタンをクリックしてね！</div>
+         <div id="chara-body">🐥</div>
+    </div>
+
+</div>
+
+<div id="result-card" class="hidden">
+    <div class="luck-rank">
+        <p>運勢:<span id="luck-text"></span></p>
+    </div>
+        <div class="result-details">
+            <div class="result-items">
+                <span class="label">願事：</span>
+                <span id="negai-text" class="content"></span>
+            </div>
+
+            <div class="result-items">
+                <span class="label">恋愛:</span>
+                <span id="renai-text" class="content"></span>
+            </div>
+
+            <div class="result-items">
+                <span class="label">学問:</span>
+                <span id="gakumon-text" class="content"></span>
+            </div>
+
+            <div class="result-items">
+                <span class="label">健康:</span>
+                <span id="kenkou-text" class="content"></span>
+            </div>
+            
+                <div class="result-items">
+                <span class="label">仕事:</span>
+                <span id="shigoto-text" class="content"></span>
+            </div>
+
+                <div class="result-items">
+                <span class="label">待人:</span>
+                <span id="machibito-text" class="content"></span>
+            </div>
+            
+            <div class="result-items">
+                <span class="label">失物:</span>
+                <span id="usemono-text" class="content"></span>
+            </div>
+        
+        </div>
+    <button id="close-btn" class="close-button">×</button>
+</div>
+
+
+<script src="../js_temp/omikuji.js"></script>
+
+</body>
+</html>

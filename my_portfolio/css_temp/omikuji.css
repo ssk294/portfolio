@@ -1,0 +1,219 @@
+body{
+    background-color:  #fffaf0;/*背景を黒に！*/
+    background-image: radial-gradient(#e0d6c8 0.5px, transparent 0.5px);
+    background-size: 10px 10px;
+    color: #5d4037;/*文字を白に*/
+    font-family: sans-serif;/*フォント変更*/
+    line-height: 1.8;/*行間*/
+    a { color: #ff6600; text-decoration: none; } /* リンクをシアン（水色）に */
+    a:hover { text-decoration: underline; } /* マウスを乗せたら線が出る */
+}
+#chara-body{
+    cursor: pointer;
+    font-size: 200px;       /* ひよこの大きさ */
+}
+#balloon {
+   position: absolute; /* 親（chara-container）を基準に動く */
+    bottom: 100%;       /* ひよこの頭の上に出したいから100%（真上） */
+    left: 50%;          /* 親の真ん中に合わせる */
+    transform: translateX(-50%); /* 自分の幅の半分だけ戻して、ピッタリ真ん中に */
+    background: #ffffff;
+    padding: 10px;
+    border : 2px solid;
+    border-radius: 15px;
+    white-space: nowrap; /* 文字が勝手に改行されないように */
+}
+.main-layout{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 300px;
+    flex-wrap: wrap;
+}
+#chara-container{
+    position: relative;
+    display: inline-block;
+}
+.uranai-button{
+    font-size: 50px;
+    font-family: 'Yuji Syuku', serif;
+    font-weight: bold;
+    cursor: pointer;
+    border: 6px double #ffffff;
+    border-radius: 15px;
+    color: #ffffff;
+    background-color: #d32f2f;
+}
+#result-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0); /* 最初は中心で小さくなってる */
+    width: 300px;
+    height: 800px;
+    padding: 20px;
+    background: #fff;
+    border: 5px double #d32f2f; /* ボタンとお揃いの二重線 */
+    display: flex;
+    flex-direction: column;/* 中身を上から下に並べる */
+    justify-content: center;/* 上下の位置も真ん中に */
+    align-items: center;/* 中身を全部「真ん中」に寄せる */
+    text-align: center;/* 文字自体もセンター揃えにする */
+    box-sizing: border-box;   /* パディングを含めたサイズ計算にする */
+    font-size: 20px;
+    font-family: 'Yuji Syuku', serif; /* 和風フォント */
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: all 0.5s ease-out; /* 変化をなめらかに */
+    z-index: 2000;
+}
+
+/* 「show」というクラスがついた時に飛び出す！ */
+#result-card.show {
+    transform: translate(-50%, -50%) scale(1) rotate(360deg); /* 回りながら大きくなる */
+    opacity: 1;
+}
+.luck-rank{
+     font-size:30px;
+     font-weight: bold;
+     color: #ff0000;
+}
+.result-details {
+    text-align: left;       
+    margin-top: 20px;         
+}
+.result-items{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 12px; 
+    width: 100%;
+    font-size: 1.1rem;
+}
+.label {
+    flex-shrink: 0;
+    width: 4.5em; 
+    color: #5d4037; 
+    font-weight: bold;
+}
+.content {
+    flex-grow: 1;
+    word-break: break-all;
+    line-height: 1.4;
+    text-align: left;
+}
+/* 金色の文字発光オーラ（大吉用） */
+.aura-gold {
+    color: #ffd700 !important; /* 文字自体を金色に */
+    font-weight: bold;
+    /* 文字の形に沿って外側に光を飛ばす */
+    text-shadow: 
+        0 0 8px #fff,
+        0 0 15px #ffd700,
+        0 0 20px #ffaa00;
+    animation: gold-shimmer 1s infinite alternate;
+}
+
+@keyframes gold-shimmer {
+    from { text-shadow: 0 0 10px #fff, 0 0 20px #ffd700; }
+    to { text-shadow: 0 0 15px #fff, 0 0 40px #ffd700, 0 0 60px #ff8800; }
+}
+
+/* 黒い文字オーラ（凶・大凶用） */
+.aura-black {
+    color: #000 !important;
+    font-weight: bold;
+    /* 文字の周りにドロッとした影をつける */
+    text-shadow: 
+        0 0 5px #4b0082,
+        0 0 15px #000;
+    animation: black-pulse 1.5s infinite alternate;
+}
+
+@keyframes black-pulse {
+    from { opacity: 0.7; }
+    to { opacity: 1; }
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+}
+
+.close-button:hover {
+    color: #ff0000; /* ホバーした時に赤くなると分かりやすい！ */
+}
+
+.menu-btn{
+    position: fixed;
+    width:40px;
+    height:40px;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
+.menu-btn span{
+    display: block;
+    width: 30px;
+    height:2px;
+    background-color: #ff6600;
+    margin-bottom: 6px;
+}
+
+.nav-menu{
+    position: fixed;
+    top: 0;right:-100%;
+    width:70%;height:100vh;
+    background-color: rgba(241, 230, 177, 0.8);
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(119, 101, 0, 0.3);
+    transition: 0.3s;
+    z-index: 90;
+}
+.nav-menu.active {
+     right: 0; 
+}
+/* --- ここからスマホ用の修正 --- */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column-reverse; /* ★ひよことボタンの順番を逆にする */
+        gap: 20px;                      /* ★隙間をもっと詰める */
+        height: auto;                   /* ★高さを固定しない */
+        min-height: 100vh;
+        padding-top: 100px;             /* ★メニューと被らないように余白 */
+        padding-bottom: 50px;
+    }
+
+    /* ひよこをスマホサイズにする */
+    #chara-body {
+        font-size: 100px; /* 少しだけ小さくして余裕を作る */
+    }
+
+    /* 占うボタンの調整 */
+    .uranai-button {
+        font-size: 32px;
+        padding: 10px 20px;
+    }
+
+    /* お札（結果カード）を画面に収める */
+    #result-card {
+        width: 90%;
+        height: auto;
+        max-height: 85vh;
+        overflow-y: auto;
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    /* 吹き出しの調整 */
+    #balloon {
+        width: 180px;
+        white-space: normal;
+        font-size: 14px;
+    }
+}

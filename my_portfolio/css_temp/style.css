@@ -1,0 +1,223 @@
+body{
+    background-color:  #909cad;
+    color: #ffefef;/*文字を白に*/
+    font-family: sans-serif;/*フォント変更*/
+    line-height: 1.8;/*行間*/
+    padding: 50px;/*画面端の余白*/
+}
+
+.profile-card{
+    display: flex;
+    justify-content: space-around;
+    align-items: center; 
+    width: 90%;
+    background-color: #035f8a;
+    border-radius: 30px;
+    padding: 40px;
+    margin: 20px auto;
+    position: relative; /* 泡をカードの中に固定するために必須！ */
+    overflow: hidden;    /* 泡がカードの外に漏れ出さないようにガード！ */
+    z-index: 0;          /* 重なりの土台にする */
+}
+
+/* 文字や画像が泡に埋もれないようにする */
+.profile-card > div {
+    position: relative;
+    z-index: 2; /* 泡(z-index: 1)よりも手前に表示する */
+}
+
+/* 泡の部屋の設定 */
+#bubble-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 泡を触れないようにして、文字選択を邪魔させない */
+    z-index: 1;           /* 背景と文字の間に泡を置く */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px; /* カードの下の外側からスタート */
+    background-color: rgba(255, 255, 255, 0.4); /* 白くて透き通った色 */
+    border: 1px solid rgba(255, 255, 255, 0.6); /* 輪郭を少しハッキリさせる */
+    border-radius: 50%; /* 丸くする */
+    pointer-events: none;
+    animation: rise linear forwards; /* 上にのぼるアニメーション */
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.5;
+    }
+    80% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(-600px) scale(1.3);
+        opacity: 0;
+    }
+}
+
+
+h1,h2{
+  font-family: "IBM Plex Sans JP", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+hr{
+    border:0.5px solid #444;
+}    
+
+a{ color:#00ffff;text-decoration:none;}
+a:hover{ text-decoration:underline;}
+
+.skill-list{
+    display: flex;/*自由に配置したいからflexで宣言*/
+    flex-wrap: wrap;/*画面が狭くなったら折り返す*/
+    gap: 20px;/*アイコン同士の中の隙間*/
+    list-style: none;/*邪魔なを消したいたい*/
+    padding: 0;/*黒点を消したときに残る左側の隙間を消して端っこに合わせたいから*/
+}
+.skill-item{
+    text-align: center;/*画像の中心にテキストを置きたいから*/
+    width: 100px;/*内部的な？アイコンのサイズ*/
+}
+/*アイコン設定*/
+.skill-icon{
+    width: 70px;
+    height: 70px;
+    border: 1.5px solid rgba(255,255,255,0.1);/*外枠をうっすら*/
+    border-radius:15px;
+    padding: 10px;
+    transition: all 0.4s ease;/*ふわっと変化*/
+    background-color: rgba(255,255,255,0.05);
+    object-fit: contain;/*画像の比率を守るためにいれる*/
+}
+/*ネオン点灯効果*/
+.skill-icon:hover{
+    cursor: pointer;
+    border-color:#00f2ff;/*ネオンブルーに点灯*/
+    background-color:rgba(0,242,255,0.1);
+    /*外側に光を漏らす*/
+    box-shadow: 0 0 15px rgba(0,242,255,0.6);
+    transform: translateY(-5px);/*ちょっと浮く*/
+}
+/*ソフト名のテキスト*/
+.skill-name{
+    display: block;
+    font-size: 12px;
+    margin-top: 8px;
+    color: #ccc;
+}
+/* ひよこ本体（chara-body）にオーラを出すルール */
+#chara-body.aura {
+    /* 赤い影を重ねて、メラメラ感を出す */
+    filter: drop-shadow(0 0 10px rgba(255, 0, 0, 0.8))
+            drop-shadow(0 0 20px rgba(255, 0, 0, 0.5));
+    
+    /* ついでにちょっとだけ震えさせるアニメーション */
+    animation: tremble 0.1s infinite;
+}
+
+/* 震える動きの定義 */
+@keyframes tremble {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(1px, 1px); }
+    50% { transform: translate(1px, 1px); }
+    75% { transform: translate(1px, -1px); }
+    100% { transform: translate(0px, 0px); }
+}
+/* --- ひよこの居場所を作る --- */
+
+#chara-body{
+    position: fixed;   /* 画面に固定する魔法 */
+    bottom: 15px;      /* 下から20px */
+    right: 15px;       /* 右から20px */
+    cursor: pointer;
+    text-align: center;
+    z-index: 1000;     /* 他のものより手前に出す */
+    display: inline-block; /* 震えるために必要！ */
+    font-size: 50px;       /* ひよこの大きさ */
+}
+
+#balloon {
+    position: fixed;
+    bottom: 85px;
+    right: 20px;
+    pointer-events: none;
+    background: #333;
+    color: #ffcc00;
+    border: 2px solid #ffcc00;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    min-width: 120px;
+}
+
+.menu-btn{
+    position: fixed;
+    width:40px;
+    height:40px;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+}
+
+.menu-btn span{
+    display: block;
+    width: 30px;
+    height:2px;
+    background-color: #ffcc00;
+    margin-bottom: 6px;
+}
+
+.nav-menu{
+    position: fixed;
+    top: 0;right:-100%;
+    width:70%;height:100vh;
+    background-color: rgba(0,0,0,0.8);
+    padding-top: 60px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.3);
+    transition: 0.3s;
+    z-index: 90;
+}
+.nav-menu.active {
+     right: 0; 
+}
+
+.profile-icon{
+    width: 250px;
+    max-width: 100%;
+    height: auto;/*比率を崩さないように*/
+}
+
+@media screen and (max-width: 768px) {
+    .profile-card {
+        display: flex;  
+        
+        /* ★解決策の主役！ */
+        flex-direction: column-reverse; /* 縦並びにして、さらにHTMLの順番を「逆（下が上、上が下）」にする！ */
+        
+        justify-content: center; /* 縦並びの時は、上下の中央に揃える */
+        text-align: center;      /* 文字も真ん中揃えにすると、スマホではオシャレに見えるよ */
+        
+        padding: 40px 20px;      /* スマホ用に、左右の余白（padding）を少し狭く調整 */
+    }
+
+    .profile-card > div {
+        z-index: 2; /* 縦に並んでも、文字が泡より手前に来る設定はキープ */
+    }
+
+    /* アイコンのサイズもスマホ用に少し小さく調整 */
+    .profile-icon {
+        width: 140px; 
+        margin-bottom: 20px; /* アイコンと文字の間に少し隙間を作る */
+    }
+}
