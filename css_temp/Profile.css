@@ -31,7 +31,7 @@ body{
 .feature-group{
     display: flex;
     justify-content: space-around;
-    gap: 15px
+    gap: 50px
 }
 
 .my-name{
@@ -43,7 +43,6 @@ body{
 .feature-item{
     font-family:"Alata", sans-serif;
     font-size: 20px;
-    margin-top: 20px;
 }
 
 .main-text{
@@ -64,13 +63,14 @@ body{
 }
 
 .my-icon{
-    width: 150px;
+    width: 200px;
     aspect-ratio: 1/1;
     object-fit: contain;
     display: block;
 }
 
 .skill-content{
+    display: flex;
     text-align: center;
     flex-direction: column;
 }
