@@ -95,3 +95,65 @@ body{
     object-fit: contain;
     display: block;
 }
+
+.like-section{
+    display: flex;
+}
+
+.like-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.like-list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+    padding: 0;
+    gap: 5px;
+}
+
+.like-card{
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    position: relative;
+}
+
+.like-title{
+    position: absolute;
+    left: 10%;
+}
+
+.like-icon{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 72px; 
+   aspect-ratio: 1/1;
+   object-fit: contain;
+}
+
+.js-like-btn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: none;
+    border: none; 
+    padding: 0;       
+}
+
+.plus-icon {
+    width: 35px;
+    display: block;
+}
+
+.like-text-card{
+    width: 200px;
+    height: 400px;
+    background-color:rgb(255, 255, 255)
+}
