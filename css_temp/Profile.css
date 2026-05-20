@@ -53,6 +53,10 @@ body{
     margin: 25px;
 }
 
+.intro-section{
+    margin: 5% 0;
+}
+
 .intro-container{
     display: flex;
     justify-content: space-around;
