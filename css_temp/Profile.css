@@ -15,7 +15,7 @@ body{
 
 .main-title{
     font-family: "Shippori Antique B1";
-    font-size:  100px;
+    font-size:  150px;
 }
 
 .profile-section{
@@ -98,25 +98,30 @@ body{
 
 .like-section{
     display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    justify-content: center;
 }
 
 .like-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .like-list{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3,1fr);
     list-style: none;
     padding: 0;
-    gap: 5px;
+    gap: 10px;
 }
 
 .like-card{
     justify-content: center;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     background-color: rgb(255, 255, 255);
     border-radius: 15px;
     position: relative;
@@ -124,7 +129,10 @@ body{
 
 .like-title{
     position: absolute;
-    left: 10%;
+    font-family:"Alata", sans-serif;
+    left: 5px;
+    margin: 0;
+    top: 5px;
 }
 
 .like-icon{
@@ -153,7 +161,17 @@ body{
 }
 
 .like-text-card{
-    width: 200px;
-    height: 400px;
-    background-color:rgb(255, 255, 255)
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 515px;
+    background-color:rgb(255, 255, 255);
+    border-radius: 15px;
+}
+
+.like-text{
+    transform: rotate(90deg);
+    font-family:"Alata", sans-serif;
+    font-size: 90px;
 }
