@@ -191,6 +191,33 @@ body{
     font-size: 85px;
 }
 
+/*modal-section*/
+.modal-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    width: 50%;
+    max-width: 500px;
+    min-width: 300px;
+    aspect-ratio: 1/1;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    border: solid 8px black;
+}
+
 /*For Animation*/
 .js-like-btn:hover{
     transform: scale(1.15);
