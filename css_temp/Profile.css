@@ -249,10 +249,15 @@ body{
 .modal-close-icon{
     width: 45px;
     display: block;
+    transition: transform 0.2s ease;
 }
 
 
 /*For Animation*/
 .js-like-btn:hover{
+    transform: scale(1.15);
+}
+
+.modal-close-icon:hover{
     transform: scale(1.15);
 }
