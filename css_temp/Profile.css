@@ -202,6 +202,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    display: none;
 }
 
 .modal-card{
@@ -217,6 +218,39 @@ body{
     border-radius: 15px;
     border: solid 8px black;
 }
+
+.modal-card-subtitle{
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+.modal-card-title{
+    font-family: "Alata", sans-serif;
+    font-size: 40px;
+    margin: 0;
+
+}
+
+.modal-card-text{
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 16px;
+    width: 70%;
+    margin-top: 10%;
+}
+
+.js-modal-close-btn{
+    cursor: pointer;
+    background: none;
+    border: none;
+    margin-top: 25px;
+}
+
+.modal-close-icon{
+    width: 45px;
+    display: block;
+}
+
 
 /*For Animation*/
 .js-like-btn:hover{
