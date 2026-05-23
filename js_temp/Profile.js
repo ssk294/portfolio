@@ -5,11 +5,9 @@ const modalOverlay = document.querySelector('.modal-overlay');
 const closeBtn = document.querySelector('.js-modal-close-btn')
 
 likeBtn.addEventListener('click',() => {
-    modalOverlay.style.opacity= '1';
-    modalOverlay.style.pointerEvents = 'auto';
+    modalOverlay.style.display= 'flex';
 });
 
 closeBtn.addEventListener('click',() =>{
-    modalOverlay.style.opacity= '0';
-    modalOverlay.style.pointerEvents = 'none';
+    modalOverlay.style.display= 'none';
 })
