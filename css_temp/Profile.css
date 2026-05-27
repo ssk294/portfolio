@@ -193,6 +193,26 @@ body{
     font-size: clamp(40px, 6vw,85px);
 }
 
+/*back to home*/
+.back-home-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+    font-family: "Alata", sans-serif;
+    font-size: 25px;
+    color: black;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.home-icon{
+    width: 25px;
+    aspect-ratio: 1/1;
+}
+
 /*modal-section*/
 .modal-overlay{
     position: fixed;
