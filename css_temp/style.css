@@ -36,6 +36,13 @@ body{
     color: #ffffff;
     background-color: #000000;
     border-radius: 25px;
-    bottom: 10px;
+    bottom: 15px;
     right: 30px;
+    transition: 0.2s ease;
 }
+
+/*For Animation*/
+.See-More-btn:hover{
+    transform: scale(1.15);
+}
+
