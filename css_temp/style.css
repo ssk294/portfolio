@@ -15,9 +15,14 @@ body{
    aspect-ratio: 2/1;
    min-height: 250px;
    margin-bottom: 5px;
+   position: relative;
 }
 
 .title{
     font-family: "Shippori Antique B1";
     font-size: clamp(40px, 10vw, 150px);
+}
+
+.See-More-btn{
+    position: absolute;
 }
