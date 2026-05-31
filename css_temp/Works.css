@@ -22,6 +22,25 @@ body{
     font-size: clamp(40px, 8vw, 150px);
 }
 
+/*back ground*/
+.back-ground{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.Works-container{
+    flex-direction: column;
+}
+
+.Works-title{
+    font-family: "Shippori Antique B1";
+    font-size: 25px;
+}
+
+
 .back-home-btn{
     display: flex;
     align-items: center;
@@ -32,6 +51,6 @@ body{
     font-family: "Alata", sans-serif;
     font-size: 25px;
     color: black;
-    gap: 10px;
+    margin-top: 5px;
     text-decoration: none;
 }
