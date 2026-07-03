@@ -22,26 +22,7 @@ body{
     font-size: clamp(40px, 8vw, 150px);
 }
 
-/*back ground*/
-.back-ground{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin-block: 5px;
-}
-
-.Works-container{
-    flex-direction: column;
-}
-
-.Works-title{
-    font-family: "Shippori Antique B1";
-    font-size: 25px;
-}
-
-
+/*other*/
 .back-home-btn{
     display: flex;
     align-items: center;
@@ -59,4 +40,37 @@ body{
 .home-icon{
     aspect-ratio: 1/1;
     width: 28px;
+}
+
+/*App-section*/
+.Works-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    margin-block: 5px;
+}
+
+.Works-title{
+    font-family: "Shippori Antique B1";
+    font-size: 25px;
+}
+
+.App-page-container{
+    display: flex;
+    height: 350px;
+    gap: 30px;
+}
+
+.App-pages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 80%;
+    background-color: rgb(91, 233, 233);
+    border-radius: 15px;
+    
 }
