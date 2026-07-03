@@ -55,3 +55,8 @@ body{
     margin-top: 5px;
     text-decoration: none;
 }
+
+.home-icon{
+    aspect-ratio: 1/1;
+    width: 28px;
+}
