@@ -86,3 +86,18 @@ body{
     border-radius: 15px;
     border: 2px solid white;
 }
+
+.tag-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    gap: 8px;
+}
+
+.tag-text{
+    background-color: rgb(161, 161, 161);
+    color:black;
+    border-radius: 8px;
+    font-size: 12px;
+}
