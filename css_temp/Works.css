@@ -53,24 +53,36 @@ body{
     margin-block: 5px;
 }
 
-.Works-title{
-    font-family: "Shippori Antique B1";
-    font-size: 25px;
-}
-
 .App-page-container{
     display: flex;
     height: 350px;
     gap: 30px;
 }
 
-.App-pages{
+.Game-serch-app-container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
-    height: 80%;
-    background-color: rgb(91, 233, 233);
+    width: 200px;
+    height: 280px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     border-radius: 15px;
-    
+}
+
+.works-title{
+    line-height: 1;
+    font-size: 15px;
+}
+
+.explane-text{
+    line-height: 1;
+    font-size: 8px;
+}
+
+.App-thumbnail{
+    width: 160px;
+    border-radius: 15px;
+    border: 2px solid white;
 }
